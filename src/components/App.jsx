@@ -85,9 +85,6 @@ class App extends React.Component {
   };
 
   onChangeStyle = (e) => {
-    console.log(e.target.name);
-    console.log(e.target.id);
-    // const k = e.target.name;
     this.setState({
       [e.target.name]: e.target.id,
     });
@@ -104,7 +101,6 @@ class App extends React.Component {
   };
 
   toImage = () => {
-    // const canvas = this.refs.canvas;
     const bgEl = this.backgroundRef.current;
     const hairEl = this.hairRef.current;
     const earsEl = this.earsRef.current;
