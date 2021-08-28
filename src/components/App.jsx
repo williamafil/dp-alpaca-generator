@@ -101,15 +101,15 @@ class App extends React.Component {
     return (
       <div className="container mx-auto px-4">
         <header>
-          <h1 className="text-5xl font-bold mb-2">
+          <h1 className="text-2xl sm:text-3xl md:text-5xl font-bold mb-2">
             Alpaca Generator{" "}
-            <span className="text-lg block md:inline-block">
+            <span className="text-sm sm:text-md md:text-lg">
               by William Kang
             </span>
           </h1>
         </header>
         <main className="flex flex-col sm:flex-row mx-auto">
-          <section className=" sm:w-1/2">
+          <section className="sm:w-1/2">
             <div className="relative leading-none">
               <img
                 ref={this.neckRef}
