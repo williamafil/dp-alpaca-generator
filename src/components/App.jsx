@@ -1,55 +1,9 @@
-import React, { Children, cloneElement } from "react";
+import React from "react";
+import { RadioGroup, RadioBtn } from "./RadioGroup";
+import Button from "./Button";
+import clsx from "../utilities/clsx";
 import "../style/App.css";
 import seed from "../seed";
-
-function clsx(...str) {
-  return str.join(" ");
-}
-
-function RadioGroup(props) {
-  const { name, legend, children, onClick } = props;
-
-  return (
-    <div>
-      <form className="mt-8 flex space-x-2">
-        <fieldset className="flex flex-wrap">
-          <legend className="block font-extrabold mb-4">{legend}</legend>
-          {Children.map(children, (child) =>
-            cloneElement(child, { name, onClick }),
-          )}
-        </fieldset>
-      </form>
-    </div>
-  );
-}
-
-function RadioBtn(props) {
-  const { id, name, selection, onClick } = props;
-
-  return (
-    <div className="">
-      <input
-        type="radio"
-        name={name}
-        id={id}
-        className="sr-only peer"
-        checked={selection === id ? true : false}
-        onChange={(e) => onClick(e)}
-      />
-      <label
-        htmlFor={id}
-        className={clsx(
-          "block mb-2 mr-2 px-4 py-2 capitalize border-2 border-blue-200 rounded-full",
-          "hover:bg-blue-300 hover:text-gray-700 text-blue-300 font-bold",
-          "peer-checked:bg-blue-900 peer-checked:border-blue-900 peer-checked:text-white",
-        )}
-      >
-        {id}
-      </label>
-    </div>
-  );
-}
-
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -204,24 +158,13 @@ class App extends React.Component {
               />
             </div>
 
-            <div className="flex justify-center mt-4">
-              <button
-                className={clsx(
-                  "mr-10",
-                  "py-3 px-8 bg-white border-2 rounded-md",
-                  "font-extrabold text-md text-black",
-                  "hover:border-gray-600 hover:shadow-md",
-                )}
+            <div className="flex justify-between mt-4">
+              <Button
+                name="Random"
+                className="mr-10"
                 onClick={this.randomStyleHandler}
-              >
-                Random
-              </button>
-              <button
-                className="py-3 px-8 bg-white rounded-md text-md  text-black font-extrabold border-2 hover:border-gray-600 hover:shadow-md"
-                onClick={this.toImage}
-              >
-                Download
-              </button>
+              />
+              <Button name="Download" onClick={this.toImage} />
             </div>
           </section>
           <section className="sm:w-1/2 px-4">
