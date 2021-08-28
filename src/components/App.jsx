@@ -105,8 +105,6 @@ class App extends React.Component {
 
   toImage = () => {
     // const canvas = this.refs.canvas;
-    const canvas = this.canvasRef.current;
-    const ctx = canvas.getContext("2d");
     const bgEl = this.backgroundRef.current;
     const hairEl = this.hairRef.current;
     const earsEl = this.earsRef.current;
@@ -116,6 +114,11 @@ class App extends React.Component {
     const accessoriesEl = this.accessoriesRef.current;
     const eyesEl = this.eyesRef.current;
     const legEl = this.legRef.current;
+
+    const canvas = this.canvasRef.current;
+    canvas.width = bgEl.width;
+    canvas.height = bgEl.height;
+    const ctx = canvas.getContext("2d");
 
     ctx.drawImage(bgEl, 0, 0, bgEl.width, bgEl.height);
     ctx.drawImage(neckEl, 0, 0, neckEl.width, neckEl.height);
@@ -262,12 +265,7 @@ class App extends React.Component {
             </RadioGroup>
           </section>
         </main>
-        <canvas
-          className="hidden"
-          ref={this.canvasRef}
-          width={535}
-          height={535}
-        />
+        <canvas className="hidden" ref={this.canvasRef} />
       </div>
     );
   }
