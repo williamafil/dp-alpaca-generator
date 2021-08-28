@@ -66,7 +66,6 @@ class App extends React.Component {
       nose: "default",
     };
     this.canvasRef = React.createRef();
-    this.imageRef = React.createRef();
     this.accessoriesRef = React.createRef();
     this.backgroundRef = React.createRef();
     this.earsRef = React.createRef();
@@ -76,13 +75,6 @@ class App extends React.Component {
     this.mouthRef = React.createRef();
     this.neckRef = React.createRef();
     this.noseRef = React.createRef();
-  }
-
-  componentDidMount() {
-    const bg = this.backgroundRef.current;
-    bg.onload = () => {
-      console.log("bg onloaded");
-    };
   }
 
   onChangeSectionHandler = (e) => {
@@ -124,11 +116,6 @@ class App extends React.Component {
     const accessoriesEl = this.accessoriesRef.current;
     const eyesEl = this.eyesRef.current;
     const legEl = this.legRef.current;
-    const img = this.imageRef.current;
-
-    console.log(canvas);
-    console.log(ctx);
-    const imgs = img.querySelectorAll("img");
 
     ctx.drawImage(bgEl, 0, 0, bgEl.width, bgEl.height);
     ctx.drawImage(neckEl, 0, 0, neckEl.width, neckEl.height);
@@ -167,7 +154,7 @@ class App extends React.Component {
         </header>
         <main className="flex flex-col sm:flex-row mx-auto">
           <section className=" sm:w-1/2">
-            <div ref={this.imageRef} className="relative leading-none">
+            <div className="relative leading-none">
               <img
                 ref={this.neckRef}
                 className="absolute"
