@@ -101,8 +101,11 @@ class App extends React.Component {
     return (
       <div className="container mx-auto px-4">
         <header>
-          <h1 className="text-5xl font-bold mb-4">
-            Alpaca Generator <span className="text-lg">by William Kang</span>
+          <h1 className="text-5xl font-bold mb-2">
+            Alpaca Generator{" "}
+            <span className="text-lg block md:inline-block">
+              by William Kang
+            </span>
           </h1>
         </header>
         <main className="flex flex-col sm:flex-row mx-auto">
@@ -167,7 +170,7 @@ class App extends React.Component {
               <Button name="Download" onClick={this.toImage} />
             </div>
           </section>
-          <section className="sm:w-1/2 px-4">
+          <section className="sm:w-1/2 sm:px-4 md:px-8">
             <RadioGroup
               name="outfit"
               legend="Accessorize Alpaca's"
