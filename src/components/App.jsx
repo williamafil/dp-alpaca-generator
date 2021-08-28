@@ -94,9 +94,8 @@ class App extends React.Component {
   };
 
   render() {
-    const imgUrl = new URL("../images/", import.meta.url);
-    // const modules = import.meta.glob("../images/backgrounds/*.png");
-    // console.log(modules);
+    const imgUrl = new URL("/images/", import.meta.url).href;
+
     return (
       <div className="container mx-auto px-4">
         <header>
@@ -109,42 +108,42 @@ class App extends React.Component {
             <div className="relative leading-none">
               <img
                 className="absolute"
-                src={imgUrl + "neck/" + this.state.neck + ".png"}
+                src={imgUrl + "/neck/" + this.state.neck + ".png"}
               />
               <img
                 className="absolute"
-                src={imgUrl + "ears/" + this.state.ears + ".png"}
-              />
-
-              <img
-                className="absolute"
-                src={imgUrl + "nose/" + this.state.nose + ".png"}
-              />
-              <img
-                className="absolute"
-                src={imgUrl + "mouth/" + this.state.mouth + ".png"}
+                src={imgUrl + "/ears/" + this.state.ears + ".png"}
               />
 
               <img
                 className="absolute"
-                src={imgUrl + "hair/" + this.state.hair + ".png"}
+                src={imgUrl + "/nose/" + this.state.nose + ".png"}
               />
               <img
                 className="absolute"
-                src={imgUrl + "accessories/" + this.state.accessories + ".png"}
-              />
-              <img
-                className="absolute"
-                src={imgUrl + "eyes/" + this.state.eyes + ".png"}
+                src={imgUrl + "/mouth/" + this.state.mouth + ".png"}
               />
 
               <img
                 className="absolute"
-                src={imgUrl + "leg/" + this.state.leg + ".png"}
+                src={imgUrl + "/hair/" + this.state.hair + ".png"}
+              />
+              <img
+                className="absolute"
+                src={imgUrl + "/accessories/" + this.state.accessories + ".png"}
+              />
+              <img
+                className="absolute"
+                src={imgUrl + "/eyes/" + this.state.eyes + ".png"}
+              />
+
+              <img
+                className="absolute"
+                src={imgUrl + "/leg/" + this.state.leg + ".png"}
               />
               <img
                 className=""
-                src={imgUrl + "backgrounds/" + this.state.backgrounds + ".png"}
+                src={imgUrl + "/backgrounds/" + this.state.backgrounds + ".png"}
               />
             </div>
 
