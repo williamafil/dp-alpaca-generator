@@ -11,7 +11,7 @@ A fun alpaca accessorizer project where you can custom your own alpaca and downl
 ### Links
 
 - [GitHub Repo](https://github.com/williamafil/dp-alpaca-generator)
-- [Live Demo](https://dp-alpaca-generator-f4ax6xhw1-williamafil.vercel.app/)
+- [Live Demo](https://dp-alpaca-generator.vercel.app/)
 
 ### Technologies Used
 
